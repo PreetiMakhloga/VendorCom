@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(MainActivity.this, login.class);
         startActivity(intent);  // calling activity from mainactivity to login activity
         finish(); // destroying mainactivity because when use click back button android should not show this activity
-        // so need to destroy the activity from backgroud 
+        // so need to destroy the activity from backgroud
     }
 }
