@@ -94,7 +94,7 @@ public class login extends AppCompatActivity {
                                 //notification
                                 Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
-                                Intent intent=new Intent(login.this,vendor_form.class);
+                                Intent intent=new Intent(login.this,ComplianceForm.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -110,16 +110,11 @@ public class login extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Login Failed! Something went wrong",Toast.LENGTH_SHORT);
                         }
                     });
-
-
-
                 }
                 else {
                     progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(),"Please Enter all the details",Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
 

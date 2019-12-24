@@ -48,7 +48,7 @@
                         android:text="Email"
                         android:textColor="#000"
                         android:layout_marginLeft="5dp"
-                        android:textSize="30dp"
+                        android:textSize="25dp"
                         android:layout_height="wrap_content">
                     </TextView>
                     <EditText
@@ -141,7 +141,16 @@
                     android:layout_height="wrap_content">
                 </EditText>
             </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#000"
+                android:text="Work Status"
+                android:textSize="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content">
+            </TextView>
             <FrameLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:id="@+id/app_not_app"
                 android:clickable="true"
@@ -171,6 +180,7 @@
                 </LinearLayout>
             </FrameLayout>
             <FrameLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:id="@+id/comp_list_form"
                 android:layout_height="wrap_content">
@@ -180,12 +190,15 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="wrap_content"
+                        android:layout_marginLeft="5dp"
                         android:text="Compliance-1"
                         android:textSize="25dp"
                         android:textColor="#000"
                         android:layout_height="wrap_content">
                     </TextView>
                     <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_width="match_parent"
                         android:orientation="vertical"
                         android:layout_height="wrap_content">
@@ -198,6 +211,7 @@
                             android:layout_height="wrap_content">
                         </TextView>
                         <LinearLayout
+                            android:layout_marginTop="5dp"
                             android:layout_width="match_parent"
                             android:orientation="horizontal"
                             android:layout_marginLeft="5dp"
@@ -219,10 +233,17 @@
                                 android:layout_height="wrap_content">
                             </Button>
                         </LinearLayout>
+                        <TextView
+                            android:id="@+id/comp1_path"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        </TextView>
                     </LinearLayout>
                     <TextView
+                        android:layout_marginTop="5dp"
                         android:layout_width="wrap_content"
                         android:text="Compliance-2"
+                        android:layout_marginLeft="5dp"
                         android:textSize="25dp"
                         android:textColor="#000"
                         android:layout_height="wrap_content">
@@ -230,8 +251,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:orientation="vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:layout_marginTop="5dp"
                             android:layout_width="wrap_content"
                             android:layout_marginRight="5dp"
                             android:layout_marginLeft="5dp"
@@ -240,6 +264,7 @@
                             android:layout_height="wrap_content">
                         </TextView>
                         <LinearLayout
+                            android:layout_marginTop="5dp"
                             android:layout_width="match_parent"
                             android:orientation="horizontal"
                             android:layout_marginLeft="5dp"
@@ -261,6 +286,11 @@
                                 android:layout_height="wrap_content">
                             </Button>
                         </LinearLayout>
+                        <TextView
+                            android:id="@+id/comp2_path"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        </TextView>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
