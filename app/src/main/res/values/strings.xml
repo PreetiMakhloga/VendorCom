@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VendorCom</string>
+    <string name="comp10_prompt">Already paid </string>
+    <string-array name="comp10">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
 </resources>

@@ -1,23 +1,28 @@
 package com.sterlitepower.vendorcom;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.obsez.android.lib.filechooser.ChooserDialog;
 
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +36,11 @@ public class ComplianceForm extends AppCompatActivity {
     FrameLayout form_status, complaince_list_frame;
     TextView comp1_pathview,comp2_pathview;
     CheckBox comp1_status, comp2_status;
+    EditText comp11_date;
 
+    private int mYear, mMonth, mDay;
+
+    DatePickerDialog datePickerDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +55,25 @@ public class ComplianceForm extends AppCompatActivity {
         comp2_file_sel=findViewById(R.id.comp2_file_btn);
         comp1_status=findViewById(R.id.comp1_status);
         comp2_status=findViewById(R.id.comp2_status);
-
+        comp11_date=findViewById(R.id.comp11_date);
         applicable.toggle();
+        comp11_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar c=Calendar.getInstance();
+                mYear=c.get(Calendar.YEAR);
+                mMonth=c.get(Calendar.MONTH);
+                mDay=c.get(Calendar.DAY_OF_MONTH);
+                datePickerDialog = new DatePickerDialog(ComplianceForm.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        comp11_date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    }
+                }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+
+        });
 
         applicable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -117,7 +143,6 @@ public class ComplianceForm extends AppCompatActivity {
             }
         });
     }
-    public int PICK_FILE_REQUEST=12;
     private void loadfile(final String complaine_name){
         new ChooserDialog(ComplianceForm.this)
                 .withStartFile("*/")
